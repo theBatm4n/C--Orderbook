@@ -108,6 +108,34 @@ private:
     Quantity quantity_;
 };
 
+struct TradeInfo{
+    OrderId orderId;
+    Price price_;
+    Quantity quantity_;
+};
+
+class Trade{
+public:
+    Trade(const TradeInfo& bidTrade, const TradeInfo& askTrade)
+        : bidTrade_{bidTrade}, askTrade_{askTrade}
+    {}
+
+    const TradeInfo& GetBidTrade() const { return bidTrade_; }
+    const TradeInfo& GetAskTrade() const { return askTrade_; }
+
+private:
+    TradeInfo bidTrade_;
+    TradeInfo askTrade_;
+};
+
+// can be more than 1 trade, one order sweeps a bunch of orders
+using Trades = std::vector<Trade>;
+
+class Orderbook{
+private:
+     
+};
+
 int main(){
     return 0;
 }
