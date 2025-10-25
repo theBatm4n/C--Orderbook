@@ -12,23 +12,19 @@
 #include "OrderbookLevelInfos.h"
 #include "Trade.h"
 
-class Orderbook
-{
+class Orderbook{
 private:
 
-    struct OrderEntry
-    {
+    struct OrderEntry{
         OrderPointer order_{ nullptr };
         OrderPointers::iterator location_;
     };
 
-    struct LevelData
-    {
+    struct LevelData{
         Quantity quantity_{ };
         Quantity count_{ };
 
-        enum class Action
-        {
+        enum class Action{
             Add,
             Remove,
             Match,

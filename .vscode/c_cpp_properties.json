@@ -3,10 +3,13 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/googletest/googletest/include",
+                "${workspaceFolder}/googletest/googlemock/include"
             ],
             "defines": [],
             "cStandard": "c17",
+            "cppStandard": "c++20",
             "intelliSenseMode": "linux-gcc-x64"
         }
     ],

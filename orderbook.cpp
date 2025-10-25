@@ -14,7 +14,7 @@ void Orderbook::PruneGoodForDayOrders(){
 		std::tm now_parts;
 
 		std::tm* now_parts_ptr = std::localtime(&now_c);
-        if (!now_parts_ptr) {
+        if (!now_parts_ptr){
             std::this_thread::sleep_for(seconds(1));
             continue;
         }
@@ -43,8 +43,7 @@ void Orderbook::PruneGoodForDayOrders(){
 		{
 			std::scoped_lock ordersLock{ ordersMutex_ };
 
-			for (const auto& [_, entry] : orders_)
-			{
+			for (const auto& [_, entry] : orders_){
 				const auto& [order, _] = entry;
 
 				if (order->GetOrderType() != OrderType::GoodForDay)
